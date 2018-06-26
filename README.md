@@ -1,6 +1,14 @@
-# admin
+# 说明
 
-> xnjadmin
+> bmob的后端云 X element x VUE 的后台管理开发框架
+
+# 功能
+
+> 登录
+
+  路由判断登录
+
+  展示数据
 
 ## Build Setup
 
@@ -17,5 +25,7 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+
+
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
