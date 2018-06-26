@@ -13,6 +13,7 @@
     "element-ui": "^2.2.1",
     "typed.js": "^2.0.6",
     "vue": "^2.5.2",
+    "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.0.1",
     "vuex": "^2.4.0"
   },

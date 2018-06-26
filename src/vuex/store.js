@@ -14,11 +14,16 @@ Vue.use(Vuex);
 
 //变量存储
 const state = State;
+// let state = {
+//   initFinish:false,//载入初始化是否完成
+//   currentUser:'1111',
+//   titleAll:'是的冯绍峰',
+// }
 const mutations = Mtations;
 const actions = Actions;
 
 export  default new Vuex.Store({
-    state,
-    mutations,
-    actions
+  state,
+  mutations,
+  actions
 })

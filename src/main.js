@@ -11,24 +11,51 @@ import './assets/css/css.less'
 import App from './App'
 import router from './router'
 
+import  VueQuillEditor from 'vue-quill-editor'
+// require styles 引入样式
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+Vue.use(VueQuillEditor)
+
 Vue.use(ElementUI)
 Vue.use(Element, { size: 'small' })
 Vue.config.productionTip = false
 
 
 router.beforeEach((to, from, next) => {
+
+  if (to.path == '/login') {
+    next();
+  } else {
+    var watchBmob = setInterval(function () {
+      if(store.state.initFinish === true){
+
+        clearInterval(watchBmob);
+        let current = Bmob.User.current()
+
+        if(!current) {
+          router.push({path: '/login'})
+        } else {
+          next();
+        }
+
+      }else{
+        console.log("监听bmob加载....")
+      }
+    },200);
+  }
+
+
   /**
    * 监听初始化是否完成
    * @type {number}
    */
-  var watchBmob = setInterval(function () {
-    if(store.state.initFinish === true){
-      clearInterval(watchBmob);
-      next();
-    }else{
-      console.log("监听....")
-    }
-  },200);
+
+
+
+  // next();
 
 });
 
